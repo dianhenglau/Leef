@@ -1,0 +1,27 @@
+Requirements
+============
+
+1. Leef is a leave management system.
+
+2. There are two roles: Admin and Employee.
+
+3. A user can be Admin or Employee, or both.
+
+4. Employee can use this system to apply for leave.
+
+5. Admin can use this system to approve and reject leave application.
+
+6. User can see leave balance.
+
+7. User can see who has applied for leave. This info is presented on a calendar.
+
+8. The basic unit of leave duration is hour.
+
+9. Admin can help member to apply for leave.
+
+10. Fields in leave application form:
+
+- Leave Type
+- From
+- To
+- Reason
