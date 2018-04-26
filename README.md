@@ -5,6 +5,6 @@ A leave management system.
 
 ## Todo
 
-[ ] Write requirements.
-[ ] Write tests.
-[ ] Implements.
+- [ ] Write requirements.
+- [ ] Write tests.
+- [ ] Implements.
