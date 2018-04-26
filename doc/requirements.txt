@@ -1,27 +1,33 @@
-Requirements
-============
+# Requirements
 
 1. Leef is a leave management system.
 
-2. There are two roles: Admin and Employee.
+2. User can have Admin privilege.
 
-3. A user can be Admin or Employee, or both.
+3. User can use this system to apply for leave.
 
-4. Employee can use this system to apply for leave.
+4. Admin can use this system to approve and reject leave application.
 
-5. Admin can use this system to approve and reject leave application.
+5. User can see annual leave balance.
 
-6. User can see leave balance.
+6. User can see who has applied for leave. This info is presented on a calendar.
 
-7. User can see who has applied for leave. This info is presented on a calendar.
+7. The basic unit of leave duration is hour.
 
-8. The basic unit of leave duration is hour.
+8. Admin can help member to apply for leave.
 
-9. Admin can help member to apply for leave.
-
-10. Fields in leave application form:
+9. Fields in leave application form:
 
 - Leave Type
 - From
 - To
-- Reason
+- Reason (Not required for annual leave)
+
+10. Record created_by, created_on, modified_by, modified_on for each data.
+
+11. Use cookie and session technology. Do not use JWT technology.
+
+12. Render HTML page at server side. Do not render at client side.
+
+13. Approved leave application can be cancelled by user.
+
