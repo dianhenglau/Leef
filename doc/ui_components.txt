@@ -1,0 +1,179 @@
+# UI Components
+
+
+## Sidebar Component
+
+- Logo (Dashboard link)
+- Username
+- Profile link
+- Users link (Admin Only)
+- Leave Applications link
+- Calendar link
+- Logout link
+
+
+## Main Layout
+
+- Sidebar Component
+- Page title
+- Breadcrumb
+
+
+## Login Page
+
+- Username input
+- Password input
+
+
+## Dashboard Page
+
+- Use Main Layout.
+
+- Recent Applications (Admin Only)
+    - Applicant
+    - Leave Type
+    - From
+    - To
+    - Status
+- Pending Application Count (Admin Only)
+- My Recent Applications
+- Apply for Leave link
+
+
+## User List Page (Admin Only)
+
+- Use Main Layout.
+- Use Page Selector Component.
+
+- Users
+    - ID
+    - Username
+    - Is Admin
+    - Created On
+- Sort by
+    - ID
+    - Username (Default)
+    - Created On
+- Filter by
+    - ID
+    - Username
+    - Is Admin
+- Add User link
+
+
+## User Info Page (Admin Only)
+
+- Use Main Layout.
+
+- ID
+- Username
+- Password input
+- Confirm Password input
+- Is Admin input
+- Annual leave balance
+- Created By
+- Created On
+- Modified By
+- Modified On
+
+
+## Add User Page (Admin Only)
+
+- Use Main Layout.
+
+- Username input
+- Password input
+- Confirm password input
+- Is Admin input
+
+
+## Leave Application List Page
+
+- Use Main Layout.
+- Use Page Selector Component.
+
+- Leave Applications
+    - ID
+    - Applicant
+    - Leave Type
+    - From
+    - To
+    - Status
+    - Created On
+    - Actions
+        - Cancel
+        - Approve (Admin Only)
+        - Reject (Admin Only)
+- Sort descending by Created On.
+- Filter by
+    - ID
+    - Applicant
+    - Leave Type
+    - Date Range
+    - Status
+- Apply for Leave link
+
+
+## Calendar Page
+
+- Use Main Layout.
+- Show by month.
+- Show pending and approved leave applications.
+- Show different color for each applicant.
+- Show different style for each status.
+
+
+## Apply for Leave Page
+
+- Use Main Layout.
+
+- Applicant ID (Admin Only)
+- Leave Type
+- From
+- To
+- Reason
+
+
+## Leave Application Info Page
+
+- Use Main Layout.
+- Admin can see all user's leave application. Non-admin can only see leave applied by oneself.
+
+- ID
+- Applicant
+- Leave Type
+- From
+- To
+- Reason
+- Status
+- Created By
+- Created On
+- Modified By
+- Modified On
+- Actions
+    - Cancel
+    - Approve (Admin Only)
+    - Reject (Admin Only)
+- Status Transaction List (Sorted descending by Created On)
+    - ID
+    - Status
+    - Note
+    - Created By
+    - Created On
+
+
+## Profile Page
+
+- Use Main Layout.
+
+- ID
+- Username
+- Password input
+- Confirm Password input
+- Is Admin
+- Annual leave balance
+- Created By
+- Created On
+- Modified By
+- Modified On
+
