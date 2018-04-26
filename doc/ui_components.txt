@@ -75,6 +75,12 @@
 - Created On
 - Modified By
 - Modified On
+- Annual Leave Balance Transaction
+    - ID
+    - Amount
+    - Note
+    - Created By
+    - Created On
 
 
 ## Add User Page (Admin Only)
@@ -154,7 +160,7 @@
     - Cancel
     - Approve (Admin Only)
     - Reject (Admin Only)
-- Status Transaction List (Sorted descending by Created On)
+- Status Log (Sorted descending by Created On)
     - ID
     - Status
     - Note
