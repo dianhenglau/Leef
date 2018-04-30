@@ -1,4 +1,4 @@
-# Leef
+# Leev
 
 A leave management system.
 

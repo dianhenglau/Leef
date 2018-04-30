@@ -1,6 +1,6 @@
 # Requirements
 
-1. Leef is a leave management system.
+1. Leev is a leave management system.
 
 2. User can have Admin privilege.
 

@@ -1,18 +1,18 @@
-#include "leef.h"
+#include "leev.h"
 
 #include "root.h"
 
 using namespace Cutelyst;
 
-Leef::Leef(QObject *parent) : Application(parent)
+Leev::Leev(QObject *parent) : Application(parent)
 {
 }
 
-Leef::~Leef()
+Leev::~Leev()
 {
 }
 
-bool Leef::init()
+bool Leev::init()
 {
     new Root(this);
 
