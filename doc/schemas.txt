@@ -1,0 +1,111 @@
+# Schemas
+
+
+## User
+
+- id: int
+- username: text
+- password: text
+- isAdmin: boolean
+- annualLeaveBalance: int
+- createdByUserId: int
+- createdAt: timestamp
+- modifiedByUserId: int
+- modifiedAt: timestamp
+
+* primary(id)
+* unique(username)
+* index(isAdmin)
+
+
+## LeaveApplication
+
+- id: int
+- appliedByUserId: int
+- leaveType: int
+- from: timestamp
+- to: timestamp
+- reason: text
+- status: int
+- createdByUserId: int
+- createdAt: timestamp
+- modifiedByUserId: int
+- modifiedAt: timestamp
+
+* primary(id)
+* foreign(appliedByUserId, User.id)
+* index(appliedByUserId, from, to)
+* foreign(leaveType, LeaveTypeEnum.id)
+* index(leaveType)
+* index(from, to)
+* foreign(status, LeaveApplicationStatusEnum.id)
+* index(status)
+* foreign(createdByUserId, User.id)
+* foreign(modifiedByUserId, User.id)
+
+
+## LeaveApplicationStatusLog
+
+- id: int
+- belongsToLeaveApplicationId: int
+- status: int
+- note: text
+- createdByUserId: int
+- createdAt: timestamp
+
+* primary(id)
+* foreign(belongsToLeaveApplicationId, LeaveApplication.id)
+* index(belongsToLeaveApplicationId, createdAt)
+* foreign(status, LeaveApplicationStatusEnum.id)
+* foreign(createdByUserId, User.id)
+
+
+## AnnualLeaveBalanceTransaction
+
+- id: int
+- belongsToUserId: int
+- amount: int
+- balance: int
+- referToLeaveApplicationId: int
+- note: text
+- createdByUserId: int
+- createdAt: timestamp
+
+* primary(id)
+* foreign(belongsToUserId, User.id)
+* index(belongsToUserId, createdAt)
+* foreign(referToLeaveAppilcationId, LeaveApplication.id)
+* foreign(createdByUserId, User.id)
+
+
+## Holiday
+
+- id: int
+- name: text
+- date: date
+- createdByUserId: int
+- createdAt: timestamp
+- modifiedByUserId: int
+- modifiedAt: timestamp
+
+* primary(id)
+* index(date)
+* foreign(createdByUserId, User.id)
+* foreign(modifiedByUserId, User.id)
+
+
+## LeaveTypeEnum
+
+1. Annual Leave
+2. Sick Leave
+3. Unpaid Leave
+4. Maternity Leave
+
+
+## LeaveApplicationStatusEnum
+
+1. Pending
+2. Approved
+3. Rejected
+4. Cancelled
+
