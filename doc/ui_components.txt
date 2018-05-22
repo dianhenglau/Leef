@@ -28,7 +28,7 @@
 
 ## Dashboard Page
 
-- Use Main Layout.
+* Use Main Layout.
 
 - Recent Applications (Admin Only)
     - Applicant
@@ -43,20 +43,20 @@
 
 ## User List Page (Admin Only)
 
-- Use Main Layout.
-- Use Page Selector Component.
+* Use Main Layout.
+* Use Page Selector Component.
 
 - Users
     - ID
     - Username
     - Is Admin
-    - Created On
+    - Created At
     - Actions
         - View
 - Sort by
     - ID
     - Username (Default)
-    - Created On
+    - Created At
 - Filter by
     - ID
     - Username
@@ -66,29 +66,42 @@
 
 ## User Info Page (Admin Only)
 
-- Use Main Layout.
+* Use Main Layout.
 
 - ID
 - Username
 - Password input
 - Confirm Password input
 - Is Admin input
-- Annual leave balance
+- Annual Leave Balance (Link to Annual Leave Balance Transaction List)
 - Created By
-- Created On
+- Created At
 - Modified By
-- Modified On
-- Annual Leave Balance Transactions
-    - ID
+- Modified At
+
+
+## Annual Leave Balance Transaction List (of a user)
+
+* Use Main Layout
+* Use Page Selector Component.
+* Admin can see Annual Leave Balance Transactions of all users. User can only see Annual Leave Balance Transactions of oneself.
+
+- ID
+- Amount
+- Balance
+- Refer To Leave Application ID (Link to Leave Application)
+- Note
+- Created By
+- Created At
+
+- Edit Leave Balance Form (Admin Only)
     - Amount
     - Note
-    - Created By
-    - Created On
 
 
 ## Add User Page (Admin Only)
 
-- Use Main Layout.
+* Use Main Layout.
 
 - Username input
 - Password input
@@ -98,8 +111,8 @@
 
 ## Leave Application List Page
 
-- Use Main Layout.
-- Use Page Selector Component.
+* Use Main Layout.
+* Use Page Selector Component.
 
 - Leave Applications
     - ID
@@ -108,12 +121,12 @@
     - From
     - To
     - Status
-    - Created On
+    - Created At
     - Actions
         - Cancel
         - Approve (Admin Only)
         - Reject (Admin Only)
-- Sort descending by Created On.
+- Sort descending by Created At.
 - Filter by
     - ID
     - Applicant
@@ -125,16 +138,16 @@
 
 ## Calendar Page
 
-- Use Main Layout.
-- Show by month.
-- Show pending and approved leave applications.
-- Show different color for each applicant.
-- Show different style for each status.
+* Use Main Layout.
+* Show by month.
+* Show pending and approved leave applications.
+* Show different color for each applicant.
+* Show different style for each status.
 
 
 ## Apply for Leave Page
 
-- Use Main Layout.
+* Use Main Layout.
 
 - Applicant ID (Admin Only)
 - Leave Type
@@ -145,8 +158,9 @@
 
 ## Leave Application Info Page
 
-- Use Main Layout.
-- Admin can see all user's leave application. Non-admin can only see leave applied by oneself.
+* Use Main Layout.
+* Admin can see all user's leave application. Non-admin can only see leave applied by oneself.
+* Leave Application cannot be edited (except status), because Annual Leave Balance based on it.
 
 - ID
 - Applicant
@@ -156,47 +170,47 @@
 - Reason
 - Status
 - Created By
-- Created On
+- Created At
 - Modified By
-- Modified On
+- Modified At
 - Actions
     - Cancel
     - Approve (Admin Only)
     - Reject (Admin Only)
-- Status Log (Sorted descending by Created On)
+- Status Log (Sorted descending by Created At)
     - ID
     - Status
     - Note
     - Created By
-    - Created On
+    - Created At
 
 
 ## Profile Page
 
-- Use Main Layout.
+* Use Main Layout.
 
 - ID
 - Username
 - Password input
 - Confirm Password input
 - Is Admin
-- Annual leave balance
+- Annual Leave Balance
 - Created By
-- Created On
+- Created At
 - Modified By
-- Modified On
+- Modified At
 
 
 ## Holiday List Page
 
-- Use Main Layout.
-- Use Page Selector Component (30 items per page).
+* Use Main Layout.
+* Use Page Selector Component (30 items per page).
 
 - Holidays
     - ID
     - Name
     - Date
-    - Created On
+    - Created At
     - Actions
         - View
         - Delete
@@ -210,14 +224,22 @@
 
 ## Holiday Info Page
 
-- Use Main Layout.
-- Admin can edit. Non-admin cannot edit.
+* Use Main Layout.
+* Admin can edit. Non-admin cannot edit.
 
 - ID
 - Name
 - Date
 - Created By
-- Created On
+- Created At
 - Modified By
-- Modified On
+- Modified At
+
+
+## Add Holiday Page (Admin Only)
+
+* Use Main Layout.
+
+- Name
+- Date
 
