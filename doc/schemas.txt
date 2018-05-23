@@ -1,100 +1,100 @@
 # Schemas
 
 
-## User
+## user
 
 - id: int
 - username: text
 - password: text
-- isAdmin: boolean
-- annualLeaveBalance: int
-- createdByUserId: int
-- createdAt: timestamp
-- modifiedByUserId: int
-- modifiedAt: timestamp
+- is_admin: boolean
+- annual_leave_balance: int
+- created_by_user_id: int
+- created_at: timestamp
+- modified_by_user_id: int
+- modified_at: timestamp
 
 * primary(id)
 * unique(username)
-* index(isAdmin)
+* index(is_admin)
 
 
-## LeaveApplication
+## leave_application
 
 - id: int
-- appliedByUserId: int
-- leaveType: int
+- applied_by_user_id: int
+- leave_type: int
 - from: timestamp
 - to: timestamp
 - reason: text
 - status: int
-- createdByUserId: int
-- createdAt: timestamp
-- modifiedByUserId: int
-- modifiedAt: timestamp
+- created_by_user_id: int
+- created_at: timestamp
+- modified_by_user_id: int
+- modified_at: timestamp
 
 * primary(id)
-* foreign(appliedByUserId, User.id)
-* index(appliedByUserId, from, to)
-* foreign(leaveType, LeaveTypeEnum.id)
-* index(leaveType)
+* foreign(applied_by_user_id, user.id)
+* index(applied_by_user_id, from, to)
+* foreign(leave_type, leave_type_enum.id)
+* index(leave_type)
 * index(from, to)
-* foreign(status, LeaveApplicationStatusEnum.id)
+* foreign(status, leave_application_status_enum.id)
 * index(status)
-* foreign(createdByUserId, User.id)
-* foreign(modifiedByUserId, User.id)
+* foreign(created_by_user_id, user.id)
+* foreign(modified_by_user_id, user.id)
 
 
-## LeaveApplicationStatusLog
+## leave_application_status_log
 
 - id: int
-- belongsToLeaveApplicationId: int
+- belongs_to_leave_application_id: int
 - status: int
 - note: text
-- createdByUserId: int
-- createdAt: timestamp
+- created_by_user_id: int
+- created_at: timestamp
 
 * primary(id)
-* foreign(belongsToLeaveApplicationId, LeaveApplication.id)
-* index(belongsToLeaveApplicationId, createdAt)
-* foreign(status, LeaveApplicationStatusEnum.id)
-* foreign(createdByUserId, User.id)
+* foreign(belongs_to_leave_application_id, leave_application.id)
+* index(belongs_to_leave_application_id, created_at)
+* foreign(status, leave_application_status_enum.id)
+* foreign(created_by_user_id, user.id)
 
 
-## AnnualLeaveBalanceTransaction
+## annual_leave_balance_transaction
 
 - id: int
-- belongsToUserId: int
+- belongs_to_user_id: int
 - amount: int
 - balance: int
-- referToLeaveApplicationId: int
+- refer_to_leave_application_id: int
 - note: text
-- createdByUserId: int
-- createdAt: timestamp
+- created_by_user_id: int
+- created_at: timestamp
 
 * primary(id)
-* foreign(belongsToUserId, User.id)
-* index(belongsToUserId, createdAt)
-* foreign(referToLeaveAppilcationId, LeaveApplication.id)
-* foreign(createdByUserId, User.id)
+* foreign(belongs_to_user_id, user.id)
+* index(belongs_to_user_id, created_at)
+* foreign(refer_to_leave_appilcation_id, leave_application.id)
+* foreign(created_by_user_id, user.id)
 
 
-## Holiday
+## holiday
 
 - id: int
 - name: text
 - date: date
-- createdByUserId: int
-- createdAt: timestamp
-- modifiedByUserId: int
-- modifiedAt: timestamp
+- created_by_user_id: int
+- created_at: timestamp
+- modified_by_user_id: int
+- modified_at: timestamp
 
 * primary(id)
 * index(date)
-* foreign(createdByUserId, User.id)
-* foreign(modifiedByUserId, User.id)
+* foreign(created_by_user_id, user.id)
+* foreign(modified_by_user_id, user.id)
 
 
-## LeaveTypeEnum
+## leave_type_enum
 
 1. Annual Leave
 2. Sick Leave
@@ -102,7 +102,7 @@
 4. Maternity Leave
 
 
-## LeaveApplicationStatusEnum
+## leave_application_status_enum
 
 1. Pending
 2. Approved
