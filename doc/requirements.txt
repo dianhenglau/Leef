@@ -33,3 +33,9 @@
 
 14. Use Postgresql.
 
+15. User can be inactivated.
+
+16. All records of inactive user cannot be modified.
+
+17. Inactive user cannot login.
+
