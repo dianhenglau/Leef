@@ -1,99 +1,6 @@
 # Schemas
 
 
-## user
-
-- id: int
-- username: text
-- password: text
-- is_admin: boolean
-- annual_leave_balance: int
-- created_by_user_id: int
-- created_at: timestamp
-- modified_by_user_id: int
-- modified_at: timestamp
-
-* primary(id)
-* unique(username)
-* index(is_admin)
-
-
-## leave_application
-
-- id: int
-- applied_by_user_id: int
-- leave_type: int
-- from: timestamp
-- to: timestamp
-- reason: text
-- status: int
-- created_by_user_id: int
-- created_at: timestamp
-- modified_by_user_id: int
-- modified_at: timestamp
-
-* primary(id)
-* foreign(applied_by_user_id, user.id)
-* index(applied_by_user_id, from, to)
-* foreign(leave_type, leave_type_enum.id)
-* index(leave_type)
-* index(from, to)
-* foreign(status, leave_application_status_enum.id)
-* index(status)
-* foreign(created_by_user_id, user.id)
-* foreign(modified_by_user_id, user.id)
-
-
-## leave_application_status_log
-
-- id: int
-- belongs_to_leave_application_id: int
-- status: int
-- note: text
-- created_by_user_id: int
-- created_at: timestamp
-
-* primary(id)
-* foreign(belongs_to_leave_application_id, leave_application.id)
-* index(belongs_to_leave_application_id, created_at)
-* foreign(status, leave_application_status_enum.id)
-* foreign(created_by_user_id, user.id)
-
-
-## annual_leave_balance_transaction
-
-- id: int
-- belongs_to_user_id: int
-- amount: int
-- balance: int
-- refer_to_leave_application_id: int
-- note: text
-- created_by_user_id: int
-- created_at: timestamp
-
-* primary(id)
-* foreign(belongs_to_user_id, user.id)
-* index(belongs_to_user_id, created_at)
-* foreign(refer_to_leave_appilcation_id, leave_application.id)
-* foreign(created_by_user_id, user.id)
-
-
-## holiday
-
-- id: int
-- name: text
-- date: date
-- created_by_user_id: int
-- created_at: timestamp
-- modified_by_user_id: int
-- modified_at: timestamp
-
-* primary(id)
-* index(date)
-* foreign(created_by_user_id, user.id)
-* foreign(modified_by_user_id, user.id)
-
-
 ## leave_type_enum
 
 1. Annual Leave
@@ -108,4 +15,100 @@
 2. Approved
 3. Rejected
 4. Cancelled
+
+
+## person
+
+- id: int
+- username: text
+- password: text
+- is_admin: boolean
+- annual_leave_balance: int
+- created_by_person_id: int
+- created_at: timestamp
+- modified_by_person_id: int
+- modified_at: timestamp
+
+* primary(id)
+* unique(username)
+* index(is_admin)
+
+
+## leave_application
+
+- id: int
+- applied_by_person_id: int
+- leave_type: int
+- start_from: timestamp
+- until: timestamp
+- reason: text
+- status: int
+- created_by_person_id: int
+- created_at: timestamp
+- modified_by_person_id: int
+- modified_at: timestamp
+
+* primary(id)
+* foreign(applied_by_person_id, person.id) delete cascade
+* index(applied_by_person_id, start_from, until)
+* foreign(leave_type, leave_type_enum.id)
+* index(leave_type)
+* index(start_from, until)
+* foreign(status, leave_application_status_enum.id)
+* index(status)
+* foreign(created_by_person_id, person.id)
+* foreign(modified_by_person_id, person.id)
+
+
+## leave_application_status_log
+
+- id: int
+- belongs_to_leave_application_id: int
+- status: int
+- note: text
+- created_by_person_id: int
+- created_at: timestamp
+
+* primary(id)
+* foreign(belongs_to_leave_application_id, leave_application.id) delete cascade
+* index(belongs_to_leave_application_id) using hash
+* foreign(status, leave_application_status_enum.id)
+* foreign(created_by_person_id, person.id)
+
+Since we are only going to filter by equality on `belongs_to_leave_application_id` column, we can use hash index on it.
+
+
+## annual_leave_balance_transaction
+
+- id: int
+- belongs_to_person_id: int
+- amount: int
+- balance: int
+- refer_to_leave_application_id: int or null
+- note: text
+- created_by_person_id: int
+- created_at: timestamp
+
+* primary(id)
+* foreign(belongs_to_person_id, person.id) delete cascade
+* index(belongs_to_person_id, created_at)
+* foreign(refer_to_leave_application_id, leave_application.id)
+* foreign(created_by_person_id, person.id)
+
+
+## holiday
+
+- id: int
+- name: text
+- date: date
+- created_by_person_id: int
+- created_at: timestamp
+- modified_by_person_id: int
+- modified_at: timestamp
+
+* primary(id)
+* index(date)
+* foreign(created_by_person_id, person.id)
+* foreign(modified_by_person_id, person.id)
+
 
