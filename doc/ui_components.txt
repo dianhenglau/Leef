@@ -6,7 +6,7 @@
 - Logo (Dashboard link)
 - Username
 - Profile link
-- Users link (Admin Only)
+- People link (Admin Only)
 - Leave Applications link
 - Calendar link
 - Holiday link
@@ -33,23 +33,24 @@
 - Recent Applications (Admin Only)
     - Applicant
     - Leave Type
-    - From
-    - To
+    - Start From
+    - Until
     - Status
 - Pending Application Count (Admin Only)
 - My Recent Applications
 - Apply for Leave link
 
 
-## User List Page (Admin Only)
+## Person List Page (Admin Only)
 
 * Use Main Layout.
 * Use Page Selector Component.
 
-- Users
+- People
     - ID
     - Username
     - Is Admin
+    - Is Active
     - Created At
     - Actions
         - View
@@ -61,10 +62,10 @@
     - ID
     - Username
     - Is Admin
-- Add User link
+- Add Person link
 
 
-## User Info Page (Admin Only)
+## Person Info Page (Admin Only)
 
 * Use Main Layout.
 
@@ -73,6 +74,7 @@
 - Password input
 - Confirm Password input
 - Is Admin input
+- Is Active input
 - Annual Leave Balance (Link to Annual Leave Balance Transaction List)
 - Created By
 - Created At
@@ -80,11 +82,11 @@
 - Modified At
 
 
-## Annual Leave Balance Transaction List (of a user)
+## Annual Leave Balance Transaction List (of a person)
 
 * Use Main Layout
 * Use Page Selector Component.
-* Admin can see Annual Leave Balance Transactions of all users. User can only see Annual Leave Balance Transactions of oneself.
+* Admin can see Annual Leave Balance Transactions of all people. Person can only see Annual Leave Balance Transactions of oneself.
 
 - ID
 - Amount
@@ -99,7 +101,7 @@
     - Note
 
 
-## Add User Page (Admin Only)
+## Add Person Page (Admin Only)
 
 * Use Main Layout.
 
@@ -118,8 +120,8 @@
     - ID
     - Applicant
     - Leave Type
-    - From
-    - To
+    - Start From
+    - Until
     - Status
     - Created At
     - Actions
@@ -151,8 +153,8 @@
 
 - Applicant ID (Admin Only)
 - Leave Type
-- From
-- To
+- Start From
+- Until
 - Reason
 
 
@@ -165,8 +167,8 @@
 - ID
 - Applicant
 - Leave Type
-- From
-- To
+- Start From
+- Until
 - Reason
 - Status
 - Created By
