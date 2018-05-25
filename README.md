@@ -3,6 +3,18 @@
 A leave management system.
 
 
+## Features
+
+
+## Installation
+
+
+## Requirements
+
+- Cutelyst 2.2.0
+- PostgreSQL 10.3
+
+
 ## Todo
 
 - [x] Write `requirements.txt`.
