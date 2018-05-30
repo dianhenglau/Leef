@@ -22,6 +22,8 @@
 
 ## Login Page
 
+* Limit the number of retries to 5.
+
 - Username input
 - Password input
 
@@ -30,13 +32,13 @@
 
 * Use Main Layout.
 
-- Recent Applications (Admin Only)
+- Recent Leave Applications (Admin Only)
     - Applicant
     - Leave Type
     - Start From
     - Until
     - Status
-- Pending Application Count (Admin Only)
+- Pending Leave Application Count (Admin Only)
 - My Recent Applications
 - Apply for Leave link
 
@@ -54,10 +56,6 @@
     - Created At
     - Actions
         - View
-- Sort by
-    - ID
-    - Username (Default)
-    - Created At
 - Filter by
     - ID
     - Username
@@ -179,7 +177,7 @@
     - Cancel
     - Approve (Admin Only)
     - Reject (Admin Only)
-- Status Log (Sorted descending by Created At)
+- Status Log Records (Sorted descending by Created At)
     - ID
     - Status
     - Note
@@ -218,8 +216,6 @@
         - Delete
 - Sort by date.
 - Filter by
-    - ID
-    - Name
     - Year (Default to current year)
 - Add Holiday link
 
