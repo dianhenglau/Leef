@@ -1,0 +1,242 @@
+# Database API
+
+
+## get_leave_type_enum
+
+Parameters
+- None
+
+Returns
+- leave_type_enum table
+
+
+## get_leave_application_status_enum
+
+Parameters
+- None
+
+Returns
+- leave_application_status_enum table
+
+
+## get_person
+
+Parameters
+- id
+
+Returns
+- person record
+
+
+## get_person
+
+Parameters
+- username
+- password
+
+Returns
+- person record
+
+
+## get_person_list
+
+Parameters
+- id (nullable)
+- username (nullable)
+- is_admin (nullable)
+- page
+
+Returns
+- person table order descending by id
+
+
+## get_person_count
+
+Parameters
+- id (nullable)
+- username (nullable)
+- is_admin (nullable)
+
+Returns
+- count
+
+
+## set_person
+
+Parameters
+- id
+- password (nullable)
+- is_admin (nullable)
+- modified_by_person_id
+
+Returns
+- person record
+
+
+## add_person
+
+Parameters
+- username
+- password
+- is_admin
+- created_by_person_id
+
+Returns
+- person record
+
+
+## remove_person
+
+Parameters
+- id
+
+Returns
+- None
+
+
+## get_leave_application
+
+Parameters
+- id
+
+Returns
+- leave_application record
+
+
+## get_leave_application_list
+
+Parameters
+- id (nullable)
+- applied_by_person_id (nullable)
+- leave_type (nullable)
+- start_from (nullable)
+- until (nullable)
+- status (nullable)
+- page
+
+Returns
+- leave_application table order descending by id
+
+
+## get_leave_application_count
+
+Parameters
+- applied_by_person_id (nullable)
+- leave_type (nullable)
+- start_from (nullable)
+- until (nullable)
+- status (nullable)
+
+Returns
+- count
+
+
+## add_leave_application
+
+Parameters
+- applied_by_person_id
+- leave_type
+- start_from
+- until
+- reason
+- status
+- created_by_person_id
+
+Returns
+- leave_application record
+
+
+## get_leave_application_status_log_record_list
+
+Parameters
+- belongs_to_leave_application_id
+
+Returns
+- leave_application_status_log_record table order descending by id
+
+
+## add_leave_application_status_log_record
+
+Parameters
+- belongs_to_leave_application_id
+- status
+- note
+- created_by_person_id
+
+Returns
+- leave_application_status_log_record record
+
+
+## get_annual_leave_balance_transaction_list
+
+Parameters
+- belongs_to_person_id
+
+Returns
+- annual_leave_balance_transaction table order descending by id
+
+
+## add_annual_leave_balance_transaction
+
+Parameters
+- belongs_to_person_id
+- amount
+- balance
+- refer_to_leave_application_id
+- note
+- created_by_person_id
+
+Returns
+- annual_leave_balance_transaction record
+
+
+## get_holiday
+
+Parameters
+- id
+
+Returns
+- holiday record
+
+
+## get_holiday_list
+
+Parameters
+- year
+
+Returns
+- holiday table order by date
+
+
+## set_holiday
+
+Parameters
+- id
+- name
+- date
+- modified_by_person_id
+
+Returns
+- holiday record
+
+
+## add_holiday
+
+Parameters
+- name
+- date
+- created_by_person_id
+
+Returns
+- holiday record
+
+
+## remove_holiday
+
+Parameters
+- id
+
+Returns
+- None
+
+
