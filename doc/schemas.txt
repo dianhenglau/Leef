@@ -31,6 +31,7 @@
 
 * primary(id)
 * unique(username)
+* index(username, password)
 * index(is_admin)
 
 
@@ -60,7 +61,7 @@
 * foreign(modified_by_person_id, person.id)
 
 
-## leave_application_status_log
+## leave_application_status_log_record
 
 - id: int
 - belongs_to_leave_application_id: int
