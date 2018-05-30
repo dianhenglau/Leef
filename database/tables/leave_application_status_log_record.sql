@@ -1,4 +1,4 @@
-CREATE TABLE leave_application_status_log (
+CREATE TABLE leave_application_status_log_record (
     id                                  SERIAL,
     belongs_to_leave_application_id     INTEGER NOT NULL,
     status                              INTEGER NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE leave_application_status_log (
         ON UPDATE CASCADE
 );
 
-CREATE INDEX leave_application_status_log_belongs_to_index
-    ON leave_application_status_log USING HASH
+CREATE INDEX leave_application_status_log_record_belongs_to_index
+    ON leave_application_status_log_record USING HASH
     (belongs_to_leave_application_id);
 
