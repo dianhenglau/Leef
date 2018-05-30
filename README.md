@@ -12,14 +12,21 @@ A leave management system.
 ## Requirements
 
 - Cutelyst 2.2.0
+- libgrantlee-dev
 - PostgreSQL 10.3
+- libpqxx
+- pgTAP
 
 
 ## Todo
 
-- [x] Write `requirements.txt`.
-- [x] Write `ui_components.txt`.
-- [x] Write `schemas.txt`.
-- [ ] Set up database for this application.
-- [ ] Write `database_api.txt`.
-- [ ] Write `application_api.txt`.
+- [x] Write requirements.
+- [x] Define UI components.
+- [x] Define schemas.
+- [x] Define database API.
+- [ ] Define application API.
+- [x] Set up database for this application.
+- [ ] Write tests.
+- [ ] Implements.
+- [ ] Write user manual.
+
