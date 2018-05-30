@@ -14,5 +14,7 @@ CREATE TABLE person (
     UNIQUE (username)
 );
 
+CREATE INDEX person_username_password_index ON person (username, password);
+
 CREATE INDEX person_is_admin_index ON person (is_admin);
 
