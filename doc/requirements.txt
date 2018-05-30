@@ -39,3 +39,4 @@
 
 17. Inactive user cannot login.
 
+18. Authenticate on application layer. Check for data integrity on database layer.
