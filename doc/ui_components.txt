@@ -63,16 +63,17 @@
 - Add Person link
 
 
-## Person Info Page (Admin Only)
+## Person Info Page
 
 * Use Main Layout.
+* Admin can see Person Info of all people. Non-admin can only see Person Info of oneself.
 
 - ID
 - Username
 - Password input
 - Confirm Password input
-- Is Admin input
-- Is Active input
+- Is Admin input (Admin Can Edit Only)
+- Is Active input (Admin Can Edit Only)
 - Annual Leave Balance (Link to Annual Leave Balance Transaction List)
 - Created By
 - Created At
@@ -107,12 +108,14 @@
 - Password input
 - Confirm password input
 - Is Admin input
+- Is Active input
 
 
 ## Leave Application List Page
 
 * Use Main Layout.
 * Use Page Selector Component.
+* User can cancel leave applied by oneself only.
 
 - Leave Applications
     - ID
@@ -185,22 +188,6 @@
     - Created At
 
 
-## Profile Page
-
-* Use Main Layout.
-
-- ID
-- Username
-- Password input
-- Confirm Password input
-- Is Admin
-- Annual Leave Balance
-- Created By
-- Created At
-- Modified By
-- Modified At
-
-
 ## Holiday List Page
 
 * Use Main Layout.
@@ -226,8 +213,8 @@
 * Admin can edit. Non-admin cannot edit.
 
 - ID
-- Name
-- Date
+- Name input
+- Date input
 - Created By
 - Created At
 - Modified By
