@@ -24,9 +24,10 @@ A leave management system.
 - [x] Define UI components.
 - [x] Define schemas.
 - [x] Define database API.
-- [ ] Define application API.
+- [x] Define application API.
 - [x] Set up database for this application.
 - [ ] Write tests.
 - [ ] Implements.
 - [ ] Write user manual.
+- [ ] Change all documents to markdown format.
 
