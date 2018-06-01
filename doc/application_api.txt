@@ -1,0 +1,368 @@
+# Application API
+
+
+## `GET /login`
+
+### Parameters
+
+None
+
+### Returns
+
+    return login page
+
+
+## `POST /login`
+
+### Parameters
+
+- `username`
+- `password`
+
+### Returns
+
+    if has error
+        redirect back with old input and error message
+    redirect to dashboard page
+
+
+## `GET /dashboard`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    return dashboard page
+
+
+## `GET /person`
+
+### Parameters
+
+- `filter_id`
+- `filter_username`
+- `filter_is_admin`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    return person list page
+
+
+## `GET /person/{id}`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin and user does not own this profile
+        return error 403 page
+    if resource not found
+        return error 404 page
+    if has error
+        redirect back with old input and error message
+    return person info page
+
+
+## `PUT /person/{id}`
+
+### Parameters
+
+- `password`
+- `confirm_password`
+- `is_admin`
+- `is_active`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin and user does not own this profile
+        return error 403 page
+    if resource not found
+        return error 404 page
+    if has error
+        redirect back with old input and error message
+    redirect to person info page
+
+
+## `GET /person/add`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    return add person page
+
+
+## `POST /person`
+
+### Parameters
+
+- `username`
+- `password`
+- `confirm_password`
+- `is_admin`
+- `is_active`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    redirect to person list page
+
+
+## `GET /person/{id}/annual_leave_balance_transaction`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin and user does not own this profile
+        return error 403 page
+    if resource not found
+        return error 404 page
+    return annual leave balance transaction list page
+
+
+## `POST /person/{id}/annual_leave_balance_transaction`
+
+### Parameters
+
+- `amount`
+- `note`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin and user does not own this profile
+        return error 403 page
+    if resource not found
+        return error 404 page
+    if has error
+        redirect back with old input and error message
+    redirect to annual leave balance transaction list page
+
+
+## `GET /leave_application`
+
+### Parameters
+
+- `filter_id`
+- `filter_applicant`
+- `filter_leave_type`
+- `filter_date_range`
+- `filter_status`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if resource not found
+        return error 404 page
+    if has error
+        redirect back with old input and error message
+    redirect to annual leave balance transaction list page
+
+
+## `GET /leave_application/add`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    redirect to apply for leave page
+
+
+## `GET /leave_application/{id}`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if resource not found
+        return error 404 page
+    if user is not admin and user does not own this leave application
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    return leave application info page
+    
+
+## `PUT /leave_application/{id}`
+
+### Parameters
+
+- `status`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if resource not found
+        return error 404 page
+    if user is not admin and user does not own this leave application
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    redirect to leave application info page
+
+
+## `GET /calendar`
+
+### Parameters
+
+- `year`
+- `month`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if has error
+        redirect back with old input and error message
+    return calendar page
+
+
+## `GET /holiday`
+
+### Parameters
+
+- `year`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if has error
+        redirect back with old input and error message
+    return holiday list page
+
+
+## `GET /holiday/{id}`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if resource not found
+        return error 404 page
+    if has error
+        redirect back with old input and error message
+    return holiday info page
+
+
+## `PUT /holiday/{id}`
+
+### Parameters
+
+- `name`
+- `date`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if resource not found
+        return error 404 page
+    if user is not admin
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    redirect to holiday info page
+
+
+## `GET /holiday/add`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin
+        return error 403 page
+    return add holiday page
+
+
+## `POST /holiday`
+
+### Parameters
+
+- `name`
+- `date`
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if user is not admin
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    redirect to holiday list page
+
+
+## `DELETE /holiday/{id}`
+
+### Parameters
+
+None
+
+### Returns
+
+    if user has not logged in
+        redirect to login page
+    if resource not found
+        return error 404 page
+    if user is not admin
+        return error 403 page
+    if has error
+        redirect back with old input and error message
+    redirect to holiday list page
+
+
