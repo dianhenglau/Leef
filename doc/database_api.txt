@@ -67,6 +67,7 @@ Parameters
 - id
 - password (nullable)
 - is_admin (nullable)
+- is_active (nullable)
 - modified_by_person_id
 
 Returns
@@ -79,6 +80,7 @@ Parameters
 - username
 - password
 - is_admin
+- is_active
 - created_by_person_id
 
 Returns
