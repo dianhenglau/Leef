@@ -40,3 +40,8 @@
 17. Inactive user cannot login.
 
 18. Authenticate on application layer. Check for data integrity on database layer.
+
+19. Try to make normal request, not AJAX request, to submit form on browser. Try to rely on JavaScript less.
+
+20. If there is any error when user submit a form, server should redirect back to that form, fill in form with old input data, and print suitable error message.
+
