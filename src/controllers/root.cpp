@@ -12,7 +12,8 @@ Root::~Root()
 
 void Root::index(Context *c)
 {
-    c->response()->body() = "Welcome to Cutelyst!";
+    c->setStash("template", "index.html");
+    c->setStash("content", "Hello! Welcome to Cutelyst!");
 }
 
 void Root::defaultPage(Context *c)
