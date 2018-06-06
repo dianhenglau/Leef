@@ -22,12 +22,14 @@ set(CMAKE_AUTOMOC ON)
 # to always look for includes there:
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+# Places to search for header files.
 include_directories(
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${Cutelyst2Qt5_INCLUDE_DIR}
 )
 
-file(GLOB_RECURSE TEMPLATES_SRC root/*)
+# Add templates to sources. Need it only if templates need compilation.
+#file(GLOB_RECURSE TEMPLATES_SRC resources/views/*)
 
 add_subdirectory(src)
